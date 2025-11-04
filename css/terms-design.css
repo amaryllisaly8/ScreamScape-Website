@@ -1,0 +1,210 @@
+/* Background Gradient */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #000000, #1a0000, #660000);
+  color: #f1f1f1;
+  line-height: 1.6;
+  overflow-x: hidden;  
+  overflow-y: scroll;
+  user-select: none;
+  -webkit-user-select: none; 
+  -moz-user-select: none;  
+  -ms-user-select: none;     
+}
+
+/* Scrollbar for Chrome, Edge, Safari */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #320000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #320000;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #320000;
+}
+
+/* Scrollbar for Firefox */
+* {
+  scrollbar-width: auto;             /* thin or auto */
+  scrollbar-color: crimson #111;     /* thumb track */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Container */
+.container {
+  max-width: 900px;
+  margin: 50px auto;
+  background: rgba(20, 20, 20, 0.9);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
+}
+
+/* Header */
+h1 {
+  text-align: center;
+  font-family: 'Nosifer', cursive;
+  font-size: 2.8rem;
+  color: #290606;
+  text-shadow: 0 0 10px #ff0000, 0 0 20px #660000;
+  margin-bottom: 30px;
+}
+
+h2 {
+  margin-top: 25px;
+  font-size: 1.4rem;
+  color: #ff4444;
+  border-left: 4px solid #ff3b3b;
+  padding-left: 10px;
+}
+
+p {
+  margin-bottom: 15px;
+  text-align: justify;
+}
+
+ul {
+  margin-left: 20px;
+}
+
+/* Back Button */
+.back-btn {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 12px 25px;
+  background: #ff3b3b;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+  transition: 0.3s;
+}
+
+.back-btn:hover {
+  background: #cc0000;
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.8);
+}
+
+/* Footer */
+#main-footer {
+  background: #0a0000;
+  color: #ccc;
+  padding: 20px 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 2px solid #ff2c2c;
+}
+
+.footer-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.footer-left .footer-logo {
+  width: 80px;  
+  height: auto;
+ 
+}
+
+
+.footer-left p {
+  font-size: 0.9rem;
+  color: #aaa;
+  text-shadow: none;
+}
+
+.footer-right a {
+  margin-left: 20px;
+  color: #ff2c2c;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-right a:hover {
+  color: #fff;
+}
+
+#loadingScreen {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(ellipse at center, #320000, #0f0000, #000000);
+  animation: fadeOut 1s ease forwards;
+  animation-delay: 3s; 
+}
+
+@keyframes bloodPulse {
+  0%   { background-color: #1a0000; }
+  100% { background-color: #320000; }
+}
+
+
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  animation: flicker 1.5s infinite alternate;
+  position: relative;
+}
+@keyframes flicker {
+  0%   { opacity: 1; text-shadow: 0 0 20px crimson; }
+  100% { opacity: 0.4; text-shadow: 0 0 5px darkred; }
+}
+.loading-text {
+  font-family: 'Nosifer', cursive;
+  font-size: 26px;
+  color: #ff2c2c;
+  margin-bottom: 20px;
+  text-shadow: 0 0 15px red, 0 0 25px crimson;
+}
+
+
+.loading-gif {
+  width: 100px;
+  height: auto;
+  position: absolute;
+  top: 60px; 
+  left: 30%;
+  transform: translateX(-50%);
+  filter: drop-shadow(0 0 8px crimson);
+  animation: moveToDarkness 10s ease-in-out forwards;
+}
+
+
+@keyframes moveToDarkness {
+  0% {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(500px) translateY(0); 
+    opacity: 0;
+  }
+}
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
